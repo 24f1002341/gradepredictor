@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta property="og:image" content="https://raw.githubusercontent.com/termgrade/grade/refs/heads/main/calculatorog.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGRADE</title>
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    
+    
+    <link href="static/styles/grade.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+    <div class="logo">SGrade</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Notes</a></li>
+            <li><a href="#">PYQ</a></li>
+            <li><a href="gclac.html">Calculator</a></li>
+            <li><a href="#">Predictor</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+        <div class="container">
+            <div id="leftbar">
+            <div>
+
+               <p><a target="_blank" href="https://github.com/masala-DosAi" style="display: inline-block;"><img src="https://images.seeklogo.com/logo-png/50/2/github-icon-logo-png_seeklogo-503247.png" alt="git" width="32" height="32" /></a>
+                  <a target="_blank" href="https://www.linkedin.com/in/yash-jha-186b62295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " style="display: inline-block;"><img src="https://pngimg.com/uploads/linkedIn/linkedIn_PNG26.png" alt="git" width="32" height="32" /></a>
+              </p>
+            </div>
+            <h1 style="color:black;">Grade Predictor</h1>
+
+
+            <select id="level" onchange="updateSubjects()">
+                <option value="">select level</option>
+                <option value="foundation">Foundation</option>
+                <option value="dip_programming">Diploma in Programming</option>
+                <option value="dip_datascience">Diploma in Datascience</option>
+            </select>
+
+
+            <select id="subject" onchange="updateForm()" disabled>
+                <option value="">Select Subject</option>
+            </select>
+
+            <form id="subjectForm" action="/" method="POST">
+                
+                
+            </form>
+            <input type="submit" id="calculateButton">
+
+            
+        </div>
+
+         <div id="mainbar">  
+            <h2 style="color:white;">Please enter the required values<span id="finalGrade" style="color:limegreen;"></span></h2>
+            <h3 style="color:white;">if error:report on whatsapp <span id="letterGrade" style="color:limegreen">9852664367</span></h3>
+         </div>
+        </div>
+    </div>
+
+   
+    <script src="static/script/pred.js"></script>
+
+    <script>
+        document.getElementById("calculateButton").addEventListener("click", function() {
+    document.getElementById("subjectForm").submit();
+});
+        
+        window.onload = function() {
+            updateSubjects();
+        };
+
+        document.getElementById("level").addEventListener("change", function() {
+            const subjectDropdown = document.getElementById("subject");
+            subjectDropdown.disabled = !this.value;
+        });
+
+        document.getElementById("subject").addEventListener("change", function() {
+            document.getElementById("calculateButton").disabled = !this.value;
+        });
+    </script>
+</body>
+
+</html>

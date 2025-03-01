@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta property="og:image" content="https://raw.githubusercontent.com/termgrade/grade/refs/heads/main/calculatorog.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGRADE</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/predresult.css') }}">
+    <meta property="og:image" content="https://raw.githubusercontent.com/masala-DosAi/PDSA/refs/heads/main/metaimggpred.png">
+
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    
+    
+    <link href="static/styles/predresult.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+    <div class="logo">SGrade</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Notes</a></li>
+            <li><a href="#">PYQ</a></li>
+            <li><a href="gclac.html">Calculator</a></li>
+            <li><a href="#">Predictor</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <div id="leftbar">
+            <div>
+
+               <p><a target="_blank" href="https://github.com/masala-DosAi" style="display: inline-block;"><img src="https://images.seeklogo.com/logo-png/50/2/github-icon-logo-png_seeklogo-503247.png" alt="git" width="32" height="32" /></a>
+                  <a target="_blank" href="https://www.linkedin.com/in/yash-jha-186b62295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " style="display: inline-block;"><img src="https://pngimg.com/uploads/linkedIn/linkedIn_PNG26.png" alt="git" width="32" height="32" /></a>
+              </p>
+            </div>
+            <h1 style="color:black;">Grade Predictor</h1>
+
+        <table id="ltab">
+            <thead>
+                <tr>
+
+                    <th>criteria</th>
+                    <th>value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, value in req_data.items() %}
+                <tr>
+                    <td>{{ key }}</td>
+                    <td>{{ value }}</td>
+                </tr>
+                {% endfor %}
+
+
+            </tbody>
+
+
+        </table>
+        <form action="/return" method="POST">
+            <input type="submit" id="calculateButton" value="Return">
+        </form>
+           
+
+            
+        </div>
+
+         <div id="mainbar"> 
+            <table id="rtab">
+                <thead>
+                <tr>
+                    <th>S</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    <th>E(pass)</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{s}}</td>
+                        <td>{{a}}</td>
+                        <td>{{b}}</td>
+                        <td>{{c}}</td>
+                        <td>{{d}}</td>
+                        <td>{{e}}</td>
+
+
+
+
+                    </tr>
+                </tbody>
+            </table> 
+            
+         </div>
+        </div>
+    </div>
+
+   
+    <script src="static/script/pred.js"></script>
+
+</body>
+
+</html>
