@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta property="og:image" content="https://raw.githubusercontent.com/termgrade/grade/refs/heads/main/calculatorog.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SGRADE</title>
@@ -13,7 +12,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
-    
+    <link rel="icon" href="{{ url_for('static', filename='sg.ico') }}">
     
     <link href="static/styles/predresult.css" rel="stylesheet">
 </head>
@@ -21,6 +20,7 @@
 <body>
     <header>
     <div class="logo">SGrade</div>
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -104,6 +104,19 @@
          </div>
         </div>
     </div>
+    <script>
+        function toggleSidebar() {
+    const sidebar = document.getElementById("leftbar");
+    sidebar.classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  const sidebar = document.getElementById("leftbar");
+  if (event.target !== sidebar && !sidebar.contains(event.target) && !event.target.classList.contains("menu-btn")) {
+    sidebar.classList.remove("show");
+  }
+};
+    </script>
 
    
     <script src="static/script/pred.js"></script>

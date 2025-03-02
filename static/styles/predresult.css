@@ -137,3 +137,63 @@ select:hover, select:focus {
     border: 2px solid black; 
     padding: 10px;
 }
+.menu-btn {
+    display: none; /* Hidden on larger screens */
+    padding: 5px;
+    background: #0f877b;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+#leftbar {
+    transition: left 0.4s ease-in-out; /* Smooth sliding effect */
+}
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block; /* Show Menu Button on small screens */
+    }
+
+    #leftbar {
+        position: fixed;
+        left: -100%; /* Hidden by default */
+        width: 70%; /* Smaller width for mobile */
+        z-index: 10; 
+        top: 0;
+    }
+
+    #leftbar.show {
+        left: 0; /* Slide sidebar into view */
+    }
+    .logo {
+        display:none;
+    }
+    .container{
+        height: 100vh;
+        justify-content: left;
+
+    }
+    nav ul li a {
+        font-size: 10px;
+    }
+    #mainbar{
+        font-size: 12px;
+    }
+
+    #rtab{
+        font-size: 10px;
+    }
+    #rtab th,#rtab td{
+        padding:5px;
+    }
+    #mainbar{
+        margin-left: 1%;
+        font-size: 8px;
+        
+    }
+
+}
