@@ -28,11 +28,13 @@ header {
     justify-content: space-between;
     align-items: center;
     padding:5px;
+    
 }
 .logo {
     font-size: 24px;
     font-weight: bold;
     margin-left: 15px;
+    font-family: Arial, sans-serif;
 }
 nav ul {
     list-style: none;
@@ -47,6 +49,7 @@ nav ul li a {
     text-decoration: none;
     transition: font-size 0.4s ease, font-weight 0.4s ease;
     transition: color 0.5s ease-in-out;
+    font-family: Arial, sans-serif;
 }
 nav ul li a:hover{
     font-weight:700;
