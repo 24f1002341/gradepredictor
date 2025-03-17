@@ -23,7 +23,7 @@
     margin-left: 30%;
 }
 header {
-    background-color: #0f877b;
+    background-color: #1877F2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -98,7 +98,7 @@ nav ul li a:hover{
 
 }
 #level option,#subject option{
-    background-color:#0f877b;
+    background-color:#3981de;
     font-family: sans-serif;
     font-size: 14px;
     font-weight:600;
@@ -124,7 +124,7 @@ select:hover, select:focus {
 .menu-btn {
     display: none; /* Hidden on larger screens */
     padding: 5px;
-    background: #0f877b;
+    background: #1DA1F2;
     color: white;
     border: none;
     font-weight: bold;
